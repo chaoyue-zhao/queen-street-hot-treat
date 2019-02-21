@@ -4,10 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Queen St. Hot Treat</title>
+  <title>Queen Street Hot Treat</title>
+
+  <style>
+    .visually-hidden:not(:focus):not(:active) {   position: absolute;   width: 1px;   height: 1px;   margin: -1px;   border: 0;   padding: 0;   white-space: nowrap;   clip-path: inset(100%);   clip: rect(0 0 0 0);   overflow: hidden; }
+  </style>
+
 </head>
 <body>
-  
+  <div class="wrapper">
+    <header>
+      <h1>
+        Queen Street Hot Treat
+      </h1>
+      <form action="">
+        <label for="radius" class="visually-hidden">How far do you want to walk?</label>
+        <select name="radius" id="radius">
+          <option hidden="">How far do you want to walk?</option>
+          <option value="250">Just a short walk</option>
+          <option value="500">A medium walk is fine</option>
+          <option value="750">I have time for a long walk</option>
+        </select>
+
+        <label for="price" class="visually-hidden">How much do you want to spend?</label>
+        <select name="price" id="price">
+          <option hidden="">How much do you want to spend?</option>
+          <option value="1">$</option>
+          <option value="2">$$</option>
+          <option value="3">$$$</option>
+          <option value="4">$$$$</option>
+        </select>
+
+        <label for="limit" class="visually-hidden">How many results do you want displayed?</label>
+        <select name="limit" id="limit">
+          <option hidden="">How many results do you want displayed?</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+        </select>
+
+        <label for="open_now">Only show restaurants currently open?</label>
+        <input type="checkbox" name="open_now" id="open_now" value="true" checked>
+
+        <label for="sort-by" class="visually-hidden">Sort your results by?</label>
+        <select name="sort-by" id="sort-by">
+          <option hidden="">Sort your results by?</option>
+          <option value="distance">Distance</option>
+          <option value="rating">Customer Rating</option>
+        </select>
+        <input type="submit" value="Submit">
+      </form>
+    </header>
+
+
+
+  </div>
   <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
   <script src="script.js"></script>
 </body>

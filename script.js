@@ -29,7 +29,7 @@ app.getDataFromApi = () => {
     data: {
       reqUrl: app.apiUrl,
       params: {
-        radius: 100,
+        radius: 50,
         limit: 5
       },
       proxyHeaders: {
