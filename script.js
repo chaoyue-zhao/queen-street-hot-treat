@@ -96,19 +96,20 @@ app.renderDOM = function(restaurants) {
     const price = restaurant.price 
     const location = restaurant. location. address1; 
     const phone = restaurant.display_phone; 
+    const distance = Math.floor(restaurant.distance);
 
 
     $(".results").append(
-      `
-      <div class="restaurant">
+      `<div class="restaurant">
         <h2 className="restaurant__title">${name}</h2>
         <img src="${image}" alt="photo of food from ${name}"/>
         <a href="${url}">More Details on Yelp</a>
         <img src="assets/yelp_stars/${rating}.png" alt="yelp rating of ${rating}"> 
-        <p class="paragraph">Based on ${review} on Yelp</p>
+        <p class="paragraph">Based on ${review} reviews on Yelp</p>
         <p class="paragraph">${price}</p>
         <p class="paragraph">${location}</p>
         <p class="paragraph">${phone}</p>
+        <p class="paragraph">${distance} Metres</p>
       </div>`
     );
   });
