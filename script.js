@@ -100,8 +100,8 @@ app.renderDOM = function(restaurants) {
 
 
     $(".results").append(
-      `<div class="restaurant">
-        <h2 className="restaurant__title">${name}</h2>
+      `<div class="results__restaurant">
+        <h2 class="restaurant__title">${name}</h2>
         <img src="${image}" alt="photo of food from ${name}"/>
         <a href="${url}">More Details on Yelp</a>
         <img src="assets/yelp_stars/${rating}.png" alt="yelp rating of ${rating}"> 

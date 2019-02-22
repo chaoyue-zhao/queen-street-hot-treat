@@ -1,0 +1,8 @@
+.results {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__restaurant{
+        flex: 1;
+    }
+}
