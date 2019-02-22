@@ -79,14 +79,26 @@ app.getDataFromApi = (radius, limit, price, sort, category, open) => {
       app.renderDOM(result.businesses);
     })
     .fail(error => { 
-      console.log("Server fucked up", error);
+      console.log("AH oh", error);
     });
 }
 
 //CREATE METHOD TO RENDER DATA FROM API RESULTS TO DOM
 
 app.renderDOM = function(restaurants) {
-  restaurants.map(function (restaurant) {
+
+  restaurants.forEach(function (restaurant) {
+    const name = restaurant.name;
+    const image = restaurant.image_url;
+    const url = restaurant.url;
+    const review = restaurant.review_count; 
+    const rating = restaurant.rating
+    const price = restaurant.price 
+    const location = restaurant. location. address1; 
+    const phone = restaurant.display_phone; 
+
+
+    const 
     $(".results").append(
       `${restaurant.name}`
     )
