@@ -20,22 +20,33 @@ app.init = () => {
 
 //ADD EVENT LISTENER - ON FORM SUBMIT - RUN RENDER FUNCTION
 app.handleFormSubmit = () => {
-
+  
   $(".form").on("submit",function (e){
     e.preventDefault();
     app.gatherUserInput();
+    app.checkIfOpen();
   })
 };
+
+app.checkIfOpen = function() {
+  console.log($(".open_now"))
+  $(".open_now").click(function(){
+    if ($(this).is(":checked")){
+      console.log("open");
+    } else {
+      console.log("closed");
+    }
+  })
+} 
+
 
 //CREATE METHOD TO GATHER USER INPUT
 app.gatherUserInput = () => {
   app.$radius = $("#radius").val();
   app.$price = $("#price").val();
   app.$limit = $("#limit").val();
-  // app.$open = $("#open_now")
   app.$sort = $("#sort_by").val();
   app.$categories = $("#categories").val();
-
 
   // console.log(app.$sort);
   app.getDataFromApi(app.$radius, app.$limit, app.$price, app.$sort, app.$categories);
@@ -59,7 +70,7 @@ app.getDataFromApi = (radius, limit, price, sort, category) => {
     }
   })
     .then(result => {
-      console.log(result);
+      $(".results").empty(); //ADD TO CHAO'S VERSION
       app.renderDOM(result.businesses);
     })
     .fail(error => {
@@ -70,7 +81,6 @@ app.getDataFromApi = (radius, limit, price, sort, category) => {
 //CREATE METHOD TO RENDER DATA FROM API RESULTS TO DOM
 
 app.renderDOM = function(restaurants) {
-  console.log("rendering!")
   restaurants.map(function (restaurant) {
     $(".results").append(
       `${restaurant.name}`
