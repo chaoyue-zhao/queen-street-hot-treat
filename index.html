@@ -15,7 +15,7 @@
       <form action="#" class="header__form form">
         <label for="radius" class="form__label visually-hidden">How far do you want to walk?</label>
         <select name="radius" id="radius" class="form__select">
-          <option hidden="">How far do you want to walk?</option>
+          <option hidden="" value="250">How far do you want to walk?</option>
           <option value="250">Just a short walk</option>
           <option value="500">A medium walk is fine</option>
           <option value="750">I have time for a long walk</option>
@@ -23,7 +23,7 @@
   
         <label for="price" class="form__label visually-hidden">How much do you want to spend?</label>
         <select name="price" id="price" class="form__select">
-          <!-- <option hidden="">How much do you want to spend?</option> -->
+          <option value="1,2,3,4">Price ranges?</option>
           <option value="1" class="form__option">$</option>
           <option value="2" class="form__option">$$</option>
           <option value="3" class="form__option">$$$</option>
@@ -32,7 +32,7 @@
   
         <label for="limit" class="form__label visually-hidden">How many results do you want displayed?</label>
         <select name="limit" id="limit" class="form__select">
-          <option hidden="" class="form__placeholder">How many results do you want displayed?</option>
+          <option hidden="" class="form__placeholder" value="20">How many results do you want displayed?</option>
           <option value="5" class="form__option">5</option>
           <option value="10" class="form__option">10</option>
           <option value="20" class="form__option">20</option>
@@ -43,13 +43,14 @@
   
         <label for="sort_by" class="form__label visually-hidden">Sort your results by?</label>
         <select name="sort_by" id="sort_by" class="form__select">
-          <option hidden="" class="form__placeholder">Sort your results by?</option>
+          <option hidden="" class="form__placeholder" value="distance">Sort your results by?</option>
           <option value="distance" class="form__option">Distance</option>
           <option value="rating" class="form__option">Customer Rating</option>
         </select>
   
         <label for="categories" class="form__label visually-hidden ">categories</label>
         <select name="categories" id="categories" class="form__select">
+          <option hidden="" class="form__placeholder" value="restaurants">Food categories?</option>
           <option value="restaurants" class="form__option">All</option>
           <option value="breakfast_brunch" class="form__option">Breakfast</option>
           <option value="bubbletea" class="form__option">Bubble Tea</option>
@@ -61,13 +62,13 @@
           <option value="italian" class="form__option">Italian</option>
           <option value="japanese,sushi" class="form__option">Japanese</option>
           <option value="juicebars" class="form__option">Juice</option>
-          <option value="korean" class="form__option">Korean</option>
           <option value="mediterranean,mideastern" class="form__option">Mediterranean</option>
           <option value="mexican" class="form__option">Mexican</option>
+          <option value="noodles,ramen" class="form__option">Noodles</option>
           <option value="pizza" class="form__option">Pizza</option>
           <option value="salad" class="form__option">Salad</option>
           <option value="sandwiches" class="form__option">Sandwiches</option>
-          <option value="ramen,noddles,soup" class="form__option">Soupy Dishes</option>
+          <option value="soup,ramen" class="form__option">Soup</option>
           <option value="thai" class="form__option">Thai</option>
           <option value="vegan,vegetarian" class="form__option">Vegan/Vegetarian</option>
         </select>

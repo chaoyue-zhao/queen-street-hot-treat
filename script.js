@@ -97,8 +97,7 @@ app.renderDOM = function(restaurants) {
     const location = restaurant. location. address1; 
     const phone = restaurant.display_phone; 
 
-
-    const 
+    
     $(".results").append(
       `${restaurant.name}`
     )
