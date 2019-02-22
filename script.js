@@ -98,9 +98,18 @@ app.renderDOM = function(restaurants) {
     const phone = restaurant.display_phone; 
 
 
-    const 
     $(".results").append(
-      `${restaurant.name}`
-    )
+      `
+      <div class="restaurant">
+        <h2 className="restaurant__title">${name}</h2>
+        <img src="${image}" alt="photo of food from ${name}"/>
+        <a href="${url}">More Details on Yelp</a>
+        <img src="assets/yelp_stars/${rating}.png" alt="yelp rating of ${rating}"> 
+        <p class="paragraph">Based on ${review} on Yelp</p>
+        <p class="paragraph">${price}</p>
+        <p class="paragraph">${location}</p>
+        <p class="paragraph">${phone}</p>
+      </div>`
+    );
   });
 }
