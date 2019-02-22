@@ -22,40 +22,43 @@ app.init = () => {
 app.handleFormSubmit = () => {
   
   $(".form").on("submit",function (e){
+    // THE MOST IMPORTANT LINE OF CODE FOR THIS APP - ALWAYS PREVENT DEFAULT FORM BEHAVIOUR
     e.preventDefault();
+
+    // CALL THE FUNCTION TO GET USER'S INPUT
     app.gatherUserInput();
+
+    // CALL THE FUNCTION TO SEE IF CHECKBOX (OPEN OR NOT) IS CHECKED
     app.checkIfOpen();
   })
 };
 
+// FUNCTION TO CHECK IF CHECKBOX IS CHECKED 
 app.checkIfOpen = function() {
-  console.log($(".open_now"))
-  $(".open_now").click(function(){
-    if ($(this).is(":checked")){
-      console.log("open");
-    } else {
-      console.log("closed");
-    }
-  })
+  if($(".open_now").is(":checked")) {
+    console.log("open");
+  } else {
+    console.log("closed");
+  }
 } 
-
 
 //CREATE METHOD TO GATHER USER INPUT
 app.gatherUserInput = () => {
+  //GATHER WHAT THE USER SELECT INSIDE THE FORM
   app.$radius = $("#radius").val();
   app.$price = $("#price").val();
   app.$limit = $("#limit").val();
   app.$sort = $("#sort_by").val();
   app.$categories = $("#categories").val();
 
-  // console.log(app.$sort);
+  //CALL THE METHOD TO GET DATA FROM API AND PASS THE USER'S SELECTIONS AS PARAMETERS
   app.getDataFromApi(app.$radius, app.$limit, app.$price, app.$sort, app.$categories);
-  // app.getDataFromApi(1000, 5, 2, "distance", "thai");
 }
 
-//CREATE METHOD TO GATHER DATA FROM FUSION API USING AJAX PULL WITH USER INPUT
+//CREATE METHOD TO GATHER DATA FROM FUSION API USING AJAX PULL WITH USER INPUTS
 app.getDataFromApi = (radius, limit, price, sort, category) => {
   $.ajax({
+    // PASSING IN THE PROXY SERVER URL
     url: app.proxyUrl + app.apiUrl,
     method: "GET",
     headers: {
@@ -70,10 +73,11 @@ app.getDataFromApi = (radius, limit, price, sort, category) => {
     }
   })
     .then(result => {
-      $(".results").empty(); //ADD TO CHAO'S VERSION
+      //EMPTY THE STATE SO WE GET A CLEAN START EVERY TIME
+      $(".results").empty(); 
       app.renderDOM(result.businesses);
     })
-    .fail(error => {
+    .fail(error => { 
       console.log("Server fucked up", error);
     });
 }
