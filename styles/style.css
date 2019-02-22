@@ -179,20 +179,24 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   overflow: hidden;
 }
 
-body {
+html {
   font-size: 125%;
+}
+
+body {
   font-family: "Raleway", sans-serif;
 }
 
 .header {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(../assets/hero.jpg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/hero.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../assets/hero.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/hero.jpg);
   background-size: cover;
   height: 100vh;
 }
 
 .header__title, .header__subtitle {
   color: #F7F3E3;
+  margin: 0;
 }
 
 .header__title {
@@ -201,10 +205,12 @@ body {
 }
 
 .header__subtitle {
-  font-size: 3rem;
+  font-size: 2rem;
+  letter-spacing: .1rem;
 }
 
 .header > .wrapper {
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -212,5 +218,24 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.form {
+  background-color: #F7F3E3;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: .5rem;
+}
+
+.form__button {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
 }
 /*# sourceMappingURL=style.css.map */

@@ -11,6 +11,11 @@ app.$form = $(".form");
 //DEFINE DOCUMENT READY// ADD INIT FUNCTION
 $(document).ready(() => {
   app.init();
+  $('select').prettyDropdown({
+    classic: false,
+    width: "100%",
+    height: 30
+  });
 });
 
 //DEFINE INIT

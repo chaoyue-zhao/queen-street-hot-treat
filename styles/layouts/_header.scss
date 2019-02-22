@@ -1,13 +1,14 @@
 .header {
   background-image: linear-gradient(
-  rgba(0, 0, 0, 0.40),
-  rgba(0, 0, 0, 0.40)),
+  rgba(0, 0, 0, 0.50),
+  rgba(0, 0, 0, 0.50)),
   url(../assets/hero.jpg);
   background-size: cover;
   height: 100vh;
 
   &__title, &__subtitle {
     color: $off-white;
+    margin: 0;
   }
 
   &__title {
@@ -16,11 +17,26 @@
   }
 
   &__subtitle {
-    font-size: 3rem;
+    font-size: 2rem;
+    letter-spacing: .1rem;
   }
 }
 
 .header > .wrapper {
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+}
+
+.form {
+  background-color: $off-white;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: .5rem;
+
+  &__button {
+    grid-column: 2 / 3;
+  }
 }

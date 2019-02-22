@@ -6,13 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Queen Street Hot Treat</title>
   <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="styles/prettydropdowns.css">
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
   <header class="header">
     <div class="wrapper">
-      <h1 class="header__title">Queen Street Hot Treat</h1>
-      <h2 class="header__subtitle">The HackerYou Food App</h2>
+      <div class="header__title-container">
+        <h1 class="header__title">Queen Street Hot Treat</h1>
+        <h2 class="header__subtitle">The HackerYou Food App</h2>
+      </div>  
       <form action="#" class="header__form form">
         <label for="radius" class="form__label visually-hidden">How far do you want to walk?</label>
         <select name="radius" id="radius" class="form__select">
@@ -38,9 +41,6 @@
           <option value="10" class="form__option">10</option>
           <option value="20" class="form__option">20</option>
         </select>
-  
-        <label for="open_now" class="form__label form__label--open">Only show restaurants currently open?</label>
-        <input type="checkbox" name="open_now" id="open_now" value="true" class="form__input" unchecked>
   
         <label for="sort_by" class="form__label visually-hidden">Sort your results by?</label>
         <select name="sort_by" id="sort_by" class="form__select">
@@ -73,6 +73,12 @@
           <option value="thai" class="form__option">Thai</option>
           <option value="vegan,vegetarian" class="form__option">Vegan/Vegetarian</option>
         </select>
+
+        <div class="form__checkbox">
+          <label for="open_now" class="form__label form__label--open">Only show restaurants currently open?</label>
+          <input type="checkbox" name="open_now" id="open_now" value="true" class="form__input" unchecked>
+        </div>
+
         <input type="submit" value="Submit" class="form__button button">
       </form>
     </div>
@@ -81,6 +87,7 @@
     
   </main>
   <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+  <script src="jquery.prettydropdowns.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
