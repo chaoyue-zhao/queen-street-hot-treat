@@ -81,27 +81,56 @@ app.getDataFromApi = (radius, limit, price, sort, category, open) => {
 app.renderDOM = function(restaurants) {
 
   restaurants.forEach(function (restaurant) {
-    const name = restaurant.name;
+    const name = restaurant.name.toLowerCase();
     const image = restaurant.image_url;
     const url = restaurant.url;
     const review = restaurant.review_count; 
-    const rating = restaurant.rating
-    const price = restaurant.price 
+    const rating = restaurant.rating;
+
+    let price;
+    if (restaurant.price === "$") {
+      price = "Under $10";
+    } else if (restaurant.price === "$$") {
+      price = "$11-$30";
+    } else if (restaurant.price === "$$$") {
+      price = "$31-$60";
+    } else if (restaurant.price === "$$$$") {
+      price = "above $61";
+    }
+    
     const location = restaurant. location. address1; 
     const phone = restaurant.display_phone; 
     const distance = Math.floor(restaurant.distance);
 
     $(".results").append(
-      `<div class="restaurant">
-        <h2 className="restaurant__title">${name}</h2>
-        <img src="${image}" alt="photo of food from ${name}"/>
-        <a href="${url}">More Details on Yelp</a>
-        <img src="assets/yelp_stars/${rating}.png" alt="yelp rating of ${rating}"> 
-        <p class="paragraph">Based on ${review} reviews on Yelp</p>
-        <p class="paragraph">${price}</p>
-        <p class="paragraph">${location}</p>
-        <p class="paragraph">${phone}</p>
-        <p class="paragraph">${distance} Metres</p>
+      `<div class="results__restaurant restaurant">
+        <div class="restaurant__image-container">
+          <img class="restaurant__image" src="${image}" alt="photo of food from ${name}"/>
+        </div>
+        <div class="restaurant__text-container">
+          <h2 class="restaurant__title title">${name}</h2>
+          <img class="restaurant__rating-image" src="assets/yelp_stars/${rating}.png" alt="yelp rating of ${rating}"> 
+          <p class="paragraph restaurant__rating">Based on ${review} reviews</p>
+          <p class="paragraph restaurant__price">
+            <i class="fas fa-dollar-sign restaurant__icon" aria-label="price:"></i>
+            ${price}
+          </p>
+          <p class="paragraph restaurant__address">
+            <i class="fas fa-map-marker-alt restaurant__icon" aria-label="address:"></i>
+            ${location}
+          </p>
+          <p class="paragraph restaurant__phone">
+            <i class="fas fa-phone restaurant__icon" aria-label="phone number:"></i>
+            ${phone}
+          </p>
+          <p class="paragraph restaurant__distance">
+            <img src="assets/distance.png" class="restaurant__icon--distance" alt="distance icon by Becris from the Noun Project" aria-label="icon"/>
+            ${distance} metres
+          </p>
+          <a href="${url}" class="restaurant__link" target="_blank"> 
+            <img class="restaurant__yelp" src="assets/yelp_logo.png" alt="read more on yelp"/>
+          </a>
+        </div>
       </div>`
     );
   });
