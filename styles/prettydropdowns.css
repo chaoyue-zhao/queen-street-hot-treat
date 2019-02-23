@@ -16,6 +16,8 @@
   color: #000;
   cursor: pointer;
   font-family: "Raleway", sans-serif;
+  color: grey;
+  font-size: .75rem;
   list-style-type: none;
   margin: 0;
   padding: 0;

@@ -21,67 +21,75 @@
       </div>  
       <form action="#" class="header__form form">
         <label for="radius" class="form__label visually-hidden">How far do you want to walk?</label>
-        <select name="radius" id="radius" class="form__select">
-          <option hidden="" value="250">Walking distance?</option>
-          <option value="250">Short walk</option>
-          <option value="500">Medium walk</option>
-          <option value="750">Long walk</option>
+        <select name="radius" id="radius" class="form__select pretty-alt">
+          <optgroup label="Walking distance?">
+            <option value="250">Short walk</option>
+            <option value="500">Medium walk</option>
+            <option value="750">Long walk</option>
+          </optgroup>
         </select>
   
         <label for="price" class="form__label visually-hidden">How much do you want to spend?</label>
-        <select name="price" id="price" class="form__select">
-          <option value="1,2,3,4">Spending limit?</option>
-          <option value="1" class="form__option">$</option>
-          <option value="2" class="form__option">$$</option>
-          <option value="3" class="form__option">$$$</option>
-          <option value="4" class="form__option">$$$$</option>
+        <select name="price" id="price" class="form__select pretty-alt">
+          <optgroup label="Spending limit?">
+            <option value="1,2,3,4" class="form__option">No spending limit</option>
+            <option value="1" class="form__option">$</option>
+            <option value="2" class="form__option">$$</option>
+            <option value="3" class="form__option">$$$</option>
+            <option value="4" class="form__option">$$$$</option>
+          </optgroup>
         </select>
   
         <label for="limit" class="form__label visually-hidden">How many results do you want displayed?</label>
-        <select name="limit" id="limit" class="form__select">
-          <option hidden="" class="form__placeholder" value="20">Results?</option>
-          <option value="5" class="form__option">5</option>
-          <option value="10" class="form__option">10</option>
-          <option value="20" class="form__option">20</option>
+        <select name="limit" id="limit" class="form__select pretty-alt">
+          <optgroup label="Results?">
+            <option value="50" class="form__option">Show max results</option>
+            <option value="5" class="form__option">5</option>
+            <option value="10" class="form__option">10</option>
+            <option value="20" class="form__option">20</option>
+          </optgroup>
         </select>
   
         <label for="sort_by" class="form__label visually-hidden">Sort your results by?</label>
-        <select name="sort_by" id="sort_by" class="form__select">
-          <option hidden="" class="form__placeholder" value="distance" selected>Sort by?</option>
-          <option value="distance" class="form__option">Distance</option>
-          <option value="rating" class="form__option">Customer Rating</option>
+        <select name="sort_by" id="sort_by" class="form__select pretty-alt">
+          <optgroup label="Sort by?">
+            <option value="distance" class="form__option">Distance</option>
+            <option value="rating" class="form__option">Customer Rating</option>
+          </optgroup>
         </select>
   
         <label for="categories" class="form__label visually-hidden ">categories</label>
-        <select name="categories" id="categories" class="form__select">
-          <option hidden="" class="form__placeholder" value="restaurants">Food categories?</option>
-          <option value="restaurants" class="form__option">All</option>
-          <option value="breakfast_brunch" class="form__option">Breakfast</option>
-          <option value="bubbletea" class="form__option">Bubble Tea</option>
-          <option value="chinese" class="form__option">Chinese</option>
-          <option value="coffee" class="form__option">Coffee</option>
-          <option value="desserts,creperies,icecream" class="form__option">Desserts</option>
-          <option value="hotdogs,chicken_wings,burgers" class="form__option">Fast Food</option>
-          <option value="indpak" class="form__option">Indian</option>
-          <option value="italian" class="form__option">Italian</option>
-          <option value="japanese,sushi" class="form__option">Japanese</option>
-          <option value="juicebars" class="form__option">Juice</option>
-          <option value="mediterranean,mideastern" class="form__option">Mediterranean</option>
-          <option value="mexican" class="form__option">Mexican</option>
-          <option value="noodles,ramen" class="form__option">Noodles</option>
-          <option value="pizza" class="form__option">Pizza</option>
-          <option value="salad" class="form__option">Salad</option>
-          <option value="sandwiches" class="form__option">Sandwiches</option>
-          <option value="soup,ramen" class="form__option">Soup</option>
-          <option value="thai" class="form__option">Thai</option>
-          <option value="vegan,vegetarian" class="form__option">Vegan/Vegetarian</option>
+        <select name="categories" id="categories" class="form__select pretty-alt">
+          <optgroup label="Food categories?">
+            <option value="restaurants" class="form__option">All categories</option>
+            <option value="breakfast_brunch" class="form__option">Breakfast</option>
+            <option value="bubbletea" class="form__option">Bubble Tea</option>
+            <option value="chinese" class="form__option">Chinese</option>
+            <option value="coffee" class="form__option">Coffee</option>
+            <option value="desserts,creperies,icecream" class="form__option">Desserts</option>
+            <option value="hotdogs,chicken_wings,burgers" class="form__option">Fast Food</option>
+            <option value="indpak" class="form__option">Indian</option>
+            <option value="italian" class="form__option">Italian</option>
+            <option value="japanese,sushi" class="form__option">Japanese</option>
+            <option value="juicebars" class="form__option">Juice</option>
+            <option value="mediterranean,mideastern" class="form__option">Mediterranean</option>
+            <option value="mexican" class="form__option">Mexican</option>
+            <option value="noodles,ramen" class="form__option">Noodles</option>
+            <option value="pizza" class="form__option">Pizza</option>
+            <option value="salad" class="form__option">Salad</option>
+            <option value="sandwiches" class="form__option">Sandwiches</option>
+            <option value="soup,ramen" class="form__option">Soup</option>
+            <option value="thai" class="form__option">Thai</option>
+            <option value="vegan,vegetarian" class="form__option">Vegan/Vegetarian</option>
+          </optgroup>
         </select>
 
         <label for="open_now" class="form__label visually-hidden">Open now?</label>
-        <select name="open_now" id="open_now" class="form__select">
-          <option hidden="" class="form__placeholder" value="false">Restaurant Hours?</option>
-          <option value="true" class="form__option">Open resturants only</option>
-          <option value="false" class="form__option">All restaurants</option>
+        <select name="open_now" id="open_now" class="form__select pretty-alt">
+          <optgroup label="Restaurant Hours?">
+            <option value="false" class="form__option">All restaurants</option>
+            <option value="true" class="form__option">Open resturants only</option>
+          </optgroup>
         </select>
 
         <input type="submit" value="Submit" class="form__button button">

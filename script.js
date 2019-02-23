@@ -11,9 +11,11 @@ app.$form = $(".form");
 //DEFINE DOCUMENT READY// ADD INIT FUNCTION
 $(document).ready(() => {
   app.init();
-  $('select').prettyDropdown({
+  $('.pretty-alt').prettyDropdown({
+    customClass: 'arrow triangle small',
+    classic: true,
     width: "100%",
-    height: 30
+    height: 50
   });
 });
 
