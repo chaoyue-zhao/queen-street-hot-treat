@@ -33,6 +33,9 @@ app.handleFormSubmit = () => {
     
     // CALL THE FUNCTION TO GET USER'S INPUT
     app.gatherUserInput();
+
+    // CALL THE FUNCTION TO SCROLL TO RESULTS SECTION
+    app.scrollTo("#main");
   })
 };
 
@@ -136,4 +139,15 @@ app.renderDOM = function(restaurants) {
       </div>`
     );
   });
+}
+
+// SCROLL TO RESULTS ON BUTTON CLICK - http://html-tuts.com/scroll-to-section-jquery/
+app.scrollTo = (id) => {
+  if ($(id).length) {
+    var getOffset = $(id).offset().top;
+    var targetDistance = 0;
+    $('html,body').animate({
+      scrollTop: getOffset - targetDistance
+    }, 500);
+  }
 }

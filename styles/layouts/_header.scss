@@ -6,19 +6,11 @@
   background-size: cover;
   height: 100vh;
 
-  &__title, &__subtitle {
-    color: $off-white;
-    margin: 0;
-  }
-
   &__title {
     font-family: $heading-font;
     font-size: 4rem;
-  }
-
-  &__subtitle {
-    font-size: 2rem;
-    letter-spacing: .1rem;
+    color: $off-white;
+    margin: 0;
   }
 }
 
