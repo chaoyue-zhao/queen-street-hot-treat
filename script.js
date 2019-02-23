@@ -12,7 +12,7 @@ app.$form = $(".form");
 $(document).ready(() => {
   app.init();
   $('.pretty-alt').prettyDropdown({
-    customClass: 'arrow triangle small',
+    customClass: "arrow triangle small",
     classic: true,
     width: "100%",
     height: 50
@@ -33,6 +33,9 @@ app.handleFormSubmit = () => {
     
     // CALL THE FUNCTION TO GET USER'S INPUT
     app.gatherUserInput();
+
+    // CALL THE FUNCTION TO SCROLL TO RESULTS SECTION
+    app.scrollTo("#main");
   })
 };
 
@@ -164,4 +167,15 @@ app.renderDOM = function(restaurants) {
     app.displayDistance(distance, restaurant.id);
   
   });
+}
+
+// SCROLL TO RESULTS ON BUTTON CLICK - http://html-tuts.com/scroll-to-section-jquery/
+app.scrollTo = (id) => {
+  if ($(id).length) {
+    var getOffset = $(id).offset().top;
+    var targetDistance = 0;
+    $('html,body').delay(1000).animate({
+      scrollTop: getOffset - targetDistance
+    }, 500);
+  }
 }
