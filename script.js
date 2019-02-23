@@ -12,7 +12,6 @@ app.$form = $(".form");
 $(document).ready(() => {
   app.init();
   $('select').prettyDropdown({
-    classic: false,
     width: "100%",
     height: 30
   });
@@ -29,23 +28,11 @@ app.handleFormSubmit = () => {
   $(".form").on("submit",function (e){
     // THE MOST IMPORTANT LINE OF CODE FOR THIS APP - ALWAYS PREVENT DEFAULT FORM BEHAVIOUR
     e.preventDefault();
-
-    // CALL THE FUNCTION TO SEE IF CHECKBOX (OPEN OR NOT) IS CHECKED
-    app.checkIfOpen();
     
     // CALL THE FUNCTION TO GET USER'S INPUT
     app.gatherUserInput();
   })
 };
-
-// FUNCTION TO CHECK IF CHECKBOX IS CHECKED 
-app.checkIfOpen = function() {
-  if($("#open_now").is(":checked")) {
-    app.open = true;
-  } else {
-    app.open = false;
-  }
-} 
 
 //CREATE METHOD TO GATHER USER INPUT
 app.gatherUserInput = () => {
@@ -55,9 +42,10 @@ app.gatherUserInput = () => {
   app.$limit = $("#limit").val();
   app.$sort = $("#sort_by").val();
   app.$categories = $("#categories").val();
+  app.$open = $("#open_now").val();
 
   //CALL THE METHOD TO GET DATA FROM API AND PASS THE USER'S SELECTIONS AS PARAMETERS
-  app.getDataFromApi(app.$radius, app.$limit, app.$price, app.$sort, app.$categories, app.open);
+  app.getDataFromApi(app.$radius, app.$limit, app.$price, app.$sort, app.$categories, app.$open);
 }
 
 //CREATE METHOD TO GATHER DATA FROM FUSION API USING AJAX PULL WITH USER INPUTS

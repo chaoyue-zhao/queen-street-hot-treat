@@ -220,17 +220,33 @@ body {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  max-width: 1600px;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .form {
-  background-color: #F7F3E3;
+  width: 100%;
+  padding: .5rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: (1fr)[3];
       grid-template-rows: repeat(3, 1fr);
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
-  grid-gap: .5rem;
+  grid-row-gap: .25rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form__select {
+  font-family: "Raleway", sans-serif;
+  padding: .5rem 1rem;
+}
+
+.form__checkbox {
+  background-color: #fff;
 }
 
 .form__button {

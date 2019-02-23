@@ -19,15 +19,15 @@
       <form action="#" class="header__form form">
         <label for="radius" class="form__label visually-hidden">How far do you want to walk?</label>
         <select name="radius" id="radius" class="form__select">
-          <option hidden="" value="250">How far do you want to walk?</option>
-          <option value="250">Just a short walk</option>
-          <option value="500">A medium walk is fine</option>
-          <option value="750">I have time for a long walk</option>
+          <option hidden="" value="250">Walking distance?</option>
+          <option value="250">Short walk</option>
+          <option value="500">Medium walk</option>
+          <option value="750">Long walk</option>
         </select>
   
         <label for="price" class="form__label visually-hidden">How much do you want to spend?</label>
         <select name="price" id="price" class="form__select">
-          <option value="1,2,3,4">Price ranges?</option>
+          <option value="1,2,3,4">Spending limit?</option>
           <option value="1" class="form__option">$</option>
           <option value="2" class="form__option">$$</option>
           <option value="3" class="form__option">$$$</option>
@@ -36,7 +36,7 @@
   
         <label for="limit" class="form__label visually-hidden">How many results do you want displayed?</label>
         <select name="limit" id="limit" class="form__select">
-          <option hidden="" class="form__placeholder" value="20">How many results do you want displayed?</option>
+          <option hidden="" class="form__placeholder" value="20">Results?</option>
           <option value="5" class="form__option">5</option>
           <option value="10" class="form__option">10</option>
           <option value="20" class="form__option">20</option>
@@ -44,7 +44,7 @@
   
         <label for="sort_by" class="form__label visually-hidden">Sort your results by?</label>
         <select name="sort_by" id="sort_by" class="form__select">
-          <option hidden="" class="form__placeholder" value="distance">Sort your results by?</option>
+          <option hidden="" class="form__placeholder" value="distance" selected>Sort by?</option>
           <option value="distance" class="form__option">Distance</option>
           <option value="rating" class="form__option">Customer Rating</option>
         </select>
@@ -74,10 +74,12 @@
           <option value="vegan,vegetarian" class="form__option">Vegan/Vegetarian</option>
         </select>
 
-        <div class="form__checkbox">
-          <label for="open_now" class="form__label form__label--open">Only show restaurants currently open?</label>
-          <input type="checkbox" name="open_now" id="open_now" value="true" class="form__input" unchecked>
-        </div>
+        <label for="open_now" class="form__label visually-hidden">Open now?</label>
+        <select name="open_now" id="open_now" class="form__select">
+          <option hidden="" class="form__placeholder" value="false">Restaurant Hours?</option>
+          <option value="true" class="form__option">Open resturants only</option>
+          <option value="false" class="form__option">All restaurants</option>
+        </select>
 
         <input type="submit" value="Submit" class="form__button button">
       </form>
