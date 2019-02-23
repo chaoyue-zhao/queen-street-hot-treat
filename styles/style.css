@@ -179,6 +179,10 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   overflow: hidden;
 }
 
+:focus {
+  outline: 1px solid #ECF0F1;
+}
+
 .wrapper {
   max-width: 1600px;
   width: 80%;
