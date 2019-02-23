@@ -7,7 +7,7 @@
     margin: $big-margin 0;
     
     &__image-container {
-        height: 30%;
+        height: 60%;
         max-height: 200px;
     }
 
@@ -23,8 +23,53 @@
         position: relative;
     }
 
+    &__title {
+        margin-bottom: 0;
+    }
+
+    &__address {
+        margin-top: 0;
+    }
+
     &__rating {
         margin: 0;
+        font-size: 0.6rem;
+        float: left;
+        width: 60%;
+    }
+
+    &__rating-image {
+        width: 50%;
+        margin-right: 30%;
+        display: block;
+    }
+
+    &__price {
+        float: right;
+        width: 20%;
+        margin: -12px 0 0 0;
+    }
+    
+    &__dollar {
+        color: rgba(43,33,24,.3);
+        letter-spacing: -4px;
+
+        &--selected{
+            color: $black;
+        }
+    }
+
+    &__distance {
+        clear: both;
+        width: 60%;
+        height: 10px;
+        background: linear-gradient(to right, $gold 0%, transparent 0%), $white;
+        margin: 2rem 0 0 0;
+    }
+
+    &__distance-text {
+        margin: 0;
+        font-size: 0.6rem;
     }
 
     &__yelp {
@@ -32,13 +77,8 @@
         width: 80px;
         position: absolute;
         bottom: 5%;
-        right: 0;
-    }
-
-    &__icon {
-
-        &--distance{
-            width: 22px;
-        }
+        right: 5%;
     }
 }
+
+

@@ -77,59 +77,83 @@ app.getDataFromApi = (radius, limit, price, sort, category, open) => {
       app.renderDOM(result.businesses);
     })
     .fail(error => { 
-      console.log("AH oh", error);
+      console.log("Ah oh", error);
     });
 }
 
+//CREATE METHOD TO DISPLAY THE PRICE BASED ON PRICE RANGE FROM API 
+app.displayPrice = function (price, id) {
+  const $firstDollar = $(`#${id} .dollar1`);
+  const $secondDollar = $(`#${id} .dollar2`);
+  const $thirdDollar = $(`#${id} .dollar3`);
+  const $forthDollar = $(`#${id} .dollar4`);
+ 
+  if (price === "$") {
+    $firstDollar.addClass("restaurant__dollar--selected");
+  } else if (price === "$$") {
+    $firstDollar.addClass("restaurant__dollar--selected");
+    $secondDollar.addClass("restaurant__dollar--selected");
+  } else if (price === "$$$") {
+    $firstDollar.addClass("restaurant__dollar--selected");
+    $secondDollar.addClass("restaurant__dollar--selected");
+    $thirdDollar.addClass("restaurant__dollar--selected");
+  } else if (price === "$$$$") {
+    $firstDollar.addClass("restaurant__dollar--selected");
+    $secondDollar.addClass("restaurant__dollar--selected");
+    $thirdDollar.addClass("restaurant__dollar--selected");
+    $forthDollar.addClass("restaurant__dollar--selected");
+  } 
+}
+
+//CREATE A FUNCTION TO CALCULATE THE DISTANCE RANGE
+app.displayDistance = function (distance, id) {
+  const distancePercentage = ((distance / 750) * 100).toFixed(2) + "%";
+  console.log(distancePercentage);
+  console.log(id);
+  console.log($(`#${id} .restaurant__distance`));
+ 
+  $(`[data-id="${id}"]`).css(
+    "background",
+    `linear-gradient(to right, #A8763E ${distancePercentage}, transparent ${distancePercentage}), #ECF0F1`
+  );
+}
+
 //CREATE METHOD TO RENDER DATA FROM API RESULTS TO DOM
-
 app.renderDOM = function(restaurants) {
-
+  
   restaurants.forEach(function (restaurant) {
     const name = restaurant.name.toLowerCase();
     const image = restaurant.image_url;
     const url = restaurant.url;
     const review = restaurant.review_count; 
     const rating = restaurant.rating;
-
-    let price;
-    if (restaurant.price === "$") {
-      price = "Under $10";
-    } else if (restaurant.price === "$$") {
-      price = "$11-$30";
-    } else if (restaurant.price === "$$$") {
-      price = "$31-$60";
-    } else if (restaurant.price === "$$$$") {
-      price = "above $61";
-    }
-    
-    const location = restaurant. location. address1; 
-    const phone = restaurant.display_phone; 
+    const price = restaurant.price;
     const distance = Math.floor(restaurant.distance);
+    const location = restaurant.location.address1; 
+  
 
     $(".results").append(
       `<div class="results__restaurant restaurant">
         <div class="restaurant__image-container">
           <img class="restaurant__image" src="${image}" alt="photo of food from ${name}"/>
         </div>
-        <div class="restaurant__text-container">
+        <div class="restaurant__text-container clearfix" id="${
+          restaurant.id
+        }>
           <h2 class="restaurant__title title">${name}</h2>
-          <img class="restaurant__rating-image" src="assets/yelp_stars/${rating}.png" alt="yelp rating of ${rating}"> 
-          <p class="paragraph restaurant__rating">Based on ${review} reviews</p>
-          <p class="paragraph restaurant__price">
-            <i class="fas fa-dollar-sign restaurant__icon" aria-label="price:"></i>
-            ${price}
-          </p>
           <p class="paragraph restaurant__address">
-            <i class="fas fa-map-marker-alt restaurant__icon" aria-label="address:"></i>
             ${location}
           </p>
-          <p class="paragraph restaurant__phone">
-            <i class="fas fa-phone restaurant__icon" aria-label="phone number:"></i>
-            ${phone}
+          <img class="restaurant__rating-image" src="assets/yelp_stars/${rating}.png" alt="yelp rating of ${rating}"> 
+          <p class="paragraph restaurant__rating">${review} Yelp reviews</p>
+          <p class="paragraph restaurant__price" id="${restaurant.id}">
+            <span class="restaurant__dollar dollar1">$</span>
+            <span class="restaurant__dollar dollar2">$</span>
+            <span class="restaurant__dollar dollar3">$</span>
+            <span class="restaurant__dollar dollar4">$</span>
           </p>
-          <p class="paragraph restaurant__distance">
-            <img src="assets/distance.png" class="restaurant__icon--distance" alt="distance icon by Becris from the Noun Project" aria-label="icon"/>
+          <p class="restaurant__distance" data-id="${restaurant.id}">&nbsp;</p>
+          <p class="paragraph restaurant__distance-text">
             ${distance} metres
           </p>
           <a href="${url}" class="restaurant__link" target="_blank"> 
@@ -138,6 +162,10 @@ app.renderDOM = function(restaurants) {
         </div>
       </div>`
     );
+
+    app.displayPrice(price, restaurant.id);
+    app.displayDistance(distance, restaurant.id);
+  
   });
 }
 
