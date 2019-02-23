@@ -12,7 +12,7 @@ app.$form = $(".form");
 $(document).ready(() => {
   app.init();
   $('.pretty-alt').prettyDropdown({
-    customClass: 'arrow triangle small',
+    customClass: "arrow triangle small",
     classic: true,
     width: "100%",
     height: 50
@@ -146,7 +146,7 @@ app.scrollTo = (id) => {
   if ($(id).length) {
     var getOffset = $(id).offset().top;
     var targetDistance = 0;
-    $('html,body').animate({
+    $('html,body').delay(800).animate({
       scrollTop: getOffset - targetDistance
     }, 500);
   }
