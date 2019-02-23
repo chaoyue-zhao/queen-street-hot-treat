@@ -191,10 +191,11 @@ html {
 
 body {
   font-family: "Raleway", sans-serif;
+  font-size: 0.9rem;
 }
 
 .title {
-  font-family: "Nothing You Could Do", cursive;
+  text-transform: capitalize;
 }
 
 .restaurant {
@@ -213,7 +214,7 @@ body {
 }
 
 .restaurant__image-container {
-  height: 30%;
+  height: 60%;
   max-height: 200px;
 }
 
@@ -230,8 +231,54 @@ body {
   position: relative;
 }
 
+.restaurant__title {
+  margin-bottom: 0;
+}
+
+.restaurant__address {
+  margin-top: 0;
+}
+
 .restaurant__rating {
   margin: 0;
+  font-size: 0.6rem;
+  float: left;
+  width: 60%;
+}
+
+.restaurant__rating-image {
+  width: 50%;
+  margin-right: 30%;
+  display: block;
+}
+
+.restaurant__price {
+  float: right;
+  width: 20%;
+  margin: -12px 0 0 0;
+}
+
+.restaurant__dollar {
+  color: rgba(43, 33, 24, 0.3);
+  letter-spacing: -4px;
+}
+
+.restaurant__dollar--selected {
+  color: #2B2118;
+}
+
+.restaurant__distance {
+  clear: both;
+  width: 60%;
+  height: 10px;
+  background: -webkit-gradient(linear, left top, right top, from(#A8763E), color-stop(0%, transparent)), #ECF0F1;
+  background: linear-gradient(to right, #A8763E 0%, transparent 0%), #ECF0F1;
+  margin: 2rem 0 0 0;
+}
+
+.restaurant__distance-text {
+  margin: 0;
+  font-size: 0.6rem;
 }
 
 .restaurant__yelp {
@@ -239,18 +286,14 @@ body {
   width: 80px;
   position: absolute;
   bottom: 5%;
-  right: 0;
-}
-
-.restaurant__icon--distance {
-  width: 22px;
+  right: 5%;
 }
 
 .header {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../assets/hero.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/hero.jpg);
   background-size: cover;
-  height: 100vh;
+  height: 90vh;
 }
 
 .header__title, .header__subtitle {
