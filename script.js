@@ -146,7 +146,7 @@ app.scrollTo = (id) => {
   if ($(id).length) {
     var getOffset = $(id).offset().top;
     var targetDistance = 0;
-    $('html,body').delay(800).animate({
+    $('html,body').delay(1000).animate({
       scrollTop: getOffset - targetDistance
     }, 500);
   }
