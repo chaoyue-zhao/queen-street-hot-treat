@@ -1,8 +1,10 @@
+body {
+    background: $white;
+}
+
 .results {
     display: flex;
     flex-wrap: wrap;
-
-    &__restaurant{
-        flex: 1;
-    }
+    justify-content: space-around;
+    align-items: flex-start;
 }

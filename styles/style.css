@@ -190,17 +190,73 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
+.title {
+  font-family: "Nothing You Could Do", cursive;
+}
+
+.restaurant {
+  width: 30%;
+  -webkit-box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.restaurant__image-container {
+  height: 30%;
+  max-height: 200px;
+}
+
+.restaurant__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.restaurant__text-container {
+  padding: 5% 10%;
+  position: relative;
+}
+
+.restaurant__rating {
+  margin: 0;
+}
+
+.restaurant__yelp {
+  display: block;
+  width: 80px;
+  position: absolute;
+  bottom: 5%;
+  right: 0;
+}
+
+.restaurant__icon--distance {
+  width: 22px;
+}
+
+body {
+  background: #ECF0F1;
+}
+
 .results {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-
-.results__restaurant {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 /*# sourceMappingURL=style.css.map */
