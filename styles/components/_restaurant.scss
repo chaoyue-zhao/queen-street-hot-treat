@@ -1,12 +1,11 @@
 .restaurant {
-    width: 30%;
     box-shadow: 0 1.5rem 3rem rgba(0,0,0,.2);
     background: #ffffff;
     display: flex;
     flex-direction: column;
     margin-top: $big-margin;
 
-    &:last-child {
+    &:last-of-type {
         margin-bottom: $big-margin;
     }
     
@@ -21,10 +20,10 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: all .2s ease-in-out;
+        transition: all .3s ease-in-out;
 
         &:hover, &:focus {
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
     }
 
@@ -82,12 +81,20 @@
         font-size: 0.6rem;
     }
 
-    &__yelp {
-        display: block;
-        width: 80px;
+    &__link {
         position: absolute;
         bottom: 5%;
         right: 5%;
+        transition: all .3s ease-in-out;
+
+        &:hover, &:focus {
+            transform: scale(1.1);
+        }
+    }
+
+    &__yelp {
+        display: block;
+        width: 80px;
     }
 }
 
