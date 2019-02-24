@@ -15,7 +15,7 @@ $(document).ready(() => {
     customClass: "arrow triangle small",
     classic: true,
     width: "100%",
-    height: 35
+    height: 45
   });
 });
 

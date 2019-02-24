@@ -7,9 +7,7 @@
   background-position: center;
   height: 90vh;
 
-  &__title, &__subtitle {
-    margin: 0;
-  }
+  &__title, &__subtitle { margin: 0; }
 
   &__title {
     font-family: $heading-font;
@@ -18,26 +16,16 @@
     margin: 0;
     line-height: 1.2;
 
-    @include media(800px) {
-      font-size: 3.5rem;
-    }
+    @include media(800px) { font-size: 3.5rem; }
 
-    @include media(600px) {
-      font-size: 3rem;
-    }
+    @include media(600px) { font-size: 3rem; }
 
-    @include media(500px) {
-      font-size: 2.5rem;
-    }
+    @include media(500px) { font-size: 2.5rem; }
 
-    @include media(400px) {
-      font-size: 2rem;
-    }
+    @include media(400px) { font-size: 2rem; }
 
     &-span {
-      @include media(1150px) {
-        display: block;
-      }
+      @include media(1150px) { display: block; }
     }
   }
 
@@ -46,21 +34,13 @@
     letter-spacing: .1rem;
     font-size: 1.5rem;
 
-    @include media(800px) {
-      font-size: 1.3rem;
-    }
+    @include media(800px) { font-size: 1.3rem; }
 
-    @include media(600px) {
-      font-size: 1.1rem;
-    }
+    @include media(600px) { font-size: 1.1rem; }
 
-    @include media(500px) {
-      font-size: 1rem;
-    }
+    @include media(500px) { font-size: 1rem; }
 
-    @include media(400px) {
-      font-size: .9rem;
-    }
+    @include media(400px) { font-size: .9rem; }
   }
 }
 
@@ -105,9 +85,7 @@
     padding: .5rem 1rem;
   }
 
-  &__checkbox {
-    background-color: #fff;
-  }
+  &__checkbox { background-color: #fff; }
 
   &__icon {
     padding-right: .75rem;
@@ -127,12 +105,8 @@
       margin-top: 1rem;
     }
 
-    @include media(1000px) {
-      grid-row: 4 / -1;
-    }
+    @include media(1000px) { grid-row: 4 / -1; }
 
-    @include media(650px) {
-      grid-row: 7 / -1;
-    }
+    @include media(650px) { grid-row: 7 / -1; }
   }
 }

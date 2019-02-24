@@ -208,7 +208,7 @@ body {
 input[type=submit] {
   font-size: .8rem;
   display: inline-block;
-  padding: .75rem 1rem;
+  padding: .65rem 1rem;
   text-decoration: none;
   border-radius: 10rem;
   -webkit-transition: all 0.2s, border 0.2s, color 0.2s;
