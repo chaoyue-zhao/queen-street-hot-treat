@@ -108,9 +108,6 @@ app.displayPrice = function (price, id) {
 //CREATE A FUNCTION TO CALCULATE THE DISTANCE RANGE
 app.displayDistance = function (distance, id) {
   const distancePercentage = ((distance / 750) * 100).toFixed(2) + "%";
-  console.log(distancePercentage);
-  console.log(id);
-  console.log($(`#${id} .restaurant__distance`));
  
   $(`[data-id="${id}"]`).css(
     "background",
