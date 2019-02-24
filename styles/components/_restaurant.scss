@@ -5,7 +5,7 @@
     flex-direction: column;
     margin-top: $big-margin;
 
-    &:last-child {
+    &:last-of-type {
         margin-bottom: $big-margin;
     }
     
