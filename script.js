@@ -139,7 +139,7 @@ app.renderDOM = function(restaurants) {
         </div>
         <div class="restaurant__text-container clearfix" id="${
           restaurant.id
-        }>
+        }">
           <h2 class="restaurant__title title">${name}</h2>
           <p class="paragraph restaurant__address">
             ${location}
