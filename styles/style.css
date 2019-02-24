@@ -651,7 +651,7 @@ footer p {
 }
 
 .header > .wrapper {
-  height: 100vh;
+  height: 90vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -672,8 +672,9 @@ footer p {
   padding: .5rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
+  -ms-grid-rows: (max-content)[2];
+      grid-template-rows: repeat(2, -webkit-max-content);
+      grid-template-rows: repeat(2, max-content);
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   grid-row-gap: .25rem;
@@ -684,8 +685,9 @@ footer p {
 
 @media (max-width: 1200px) {
   .form {
-    -ms-grid-rows: (1fr)[3];
-        grid-template-rows: repeat(3, 1fr);
+    -ms-grid-rows: (max-content)[3];
+        grid-template-rows: repeat(3, -webkit-max-content);
+        grid-template-rows: repeat(3, max-content);
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
   }
@@ -693,8 +695,9 @@ footer p {
 
 @media (max-width: 1000px) {
   .form {
-    -ms-grid-rows: (1fr)[4];
-        grid-template-rows: repeat(4, 1fr);
+    -ms-grid-rows: (max-content)[4];
+        grid-template-rows: repeat(4, -webkit-max-content);
+        grid-template-rows: repeat(4, max-content);
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
@@ -702,8 +705,9 @@ footer p {
 
 @media (max-width: 650px) {
   .form {
-    -ms-grid-rows: (1fr)[7];
-        grid-template-rows: repeat(7, 1fr);
+    -ms-grid-rows: (max-content)[7];
+        grid-template-rows: repeat(7, -webkit-max-content);
+        grid-template-rows: repeat(7, max-content);
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
   }
@@ -740,6 +744,7 @@ footer p {
   .form__button {
     grid-row: 3 / -1;
     grid-column: 1 / -1;
+    margin-top: 1rem;
   }
 }
 
