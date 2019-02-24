@@ -236,7 +236,6 @@ input[type=submit]:active {
 }
 
 .restaurant {
-  width: 30%;
   -webkit-box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
           box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
   background: #ffffff;
@@ -266,13 +265,13 @@ input[type=submit]:active {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .restaurant__image:hover, .restaurant__image:focus {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .restaurant__text-container {
@@ -330,12 +329,22 @@ input[type=submit]:active {
   font-size: 0.6rem;
 }
 
-.restaurant__yelp {
-  display: block;
-  width: 80px;
+.restaurant__link {
   position: absolute;
   bottom: 5%;
   right: 5%;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.restaurant__link:hover, .restaurant__link:focus {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.restaurant__yelp {
+  display: block;
+  width: 80px;
 }
 
 .prettydropdown {
@@ -565,6 +574,7 @@ footer {
   background: #2B2118;
   width: 100%;
   padding: .5rem 0;
+  height: 7vh;
 }
 
 footer p {
@@ -584,7 +594,7 @@ footer p {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/hero.JPG);
   background-size: cover;
   background-position: center;
-  height: 90vh;
+  height: 93vh;
 }
 
 .header__title {
@@ -645,15 +655,10 @@ body {
 }
 
 .results {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-column-gap: 2rem;
 }
 /*# sourceMappingURL=style.css.map */
