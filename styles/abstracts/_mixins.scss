@@ -1,0 +1,7 @@
+// MEDIA QUERIES MIXINS
+
+@mixin media($screen-size) {
+  @media (max-width: $screen-size) {
+    @content;
+  }
+}
