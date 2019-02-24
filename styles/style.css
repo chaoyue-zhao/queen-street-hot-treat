@@ -200,6 +200,7 @@ body {
 
 .title {
   text-transform: capitalize;
+  font-family: "Nothing You Could Do", cursive;
 }
 
 .button:link,
