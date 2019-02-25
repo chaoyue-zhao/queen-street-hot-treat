@@ -33,9 +33,6 @@ app.handleFormSubmit = () => {
     
     // CALL THE FUNCTION TO GET USER'S INPUT
     app.gatherUserInput();
-
-    // CALL THE FUNCTION TO SCROLL TO RESULTS SECTION
-    // app.scrollTo("#main");
   })
 };
 
@@ -75,6 +72,7 @@ app.getDataFromApi = (radius, limit, price, sort, category, open) => {
       //EMPTY THE STATE SO WE GET A CLEAN START EVERY TIME
       $(".results").empty(); 
       app.renderDOM(result.businesses);
+      // CALL THE FUNCTION TO SCROLL TO RESULTS SECTION
       app.scrollTo("#main");
     })
     .fail(error => { 
