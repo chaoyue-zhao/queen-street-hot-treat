@@ -35,7 +35,7 @@ app.handleFormSubmit = () => {
     app.gatherUserInput();
 
     // CALL THE FUNCTION TO SCROLL TO RESULTS SECTION
-    app.scrollTo("#main");
+    // app.scrollTo("#main");
   })
 };
 
@@ -75,6 +75,7 @@ app.getDataFromApi = (radius, limit, price, sort, category, open) => {
       //EMPTY THE STATE SO WE GET A CLEAN START EVERY TIME
       $(".results").empty(); 
       app.renderDOM(result.businesses);
+      app.scrollTo("#main");
     })
     .fail(error => { 
       alert("Sorry, we did not find any restaurants that match your search criteria")
@@ -171,7 +172,7 @@ app.scrollTo = (id) => {
   if ($(id).length) {
     var getOffset = $(id).offset().top;
     var targetDistance = 0;
-    $('html,body').delay(1000).animate({
+    $('html,body').animate({
       scrollTop: getOffset - targetDistance
     }, 500);
   }
