@@ -115,6 +115,29 @@ app.displayDistance = function (distance, id) {
   );
 }
 
+app.displayCategory = function (category) {
+  app.category = categories;
+  console.log(category);
+
+  app.iconFiles = ["breakfast_brunch", "bubbletea", "chinese", "coffee", "desserts", "french", "hotdogs", "indpek", "italian", "japanese", "juicebars", "mediterranean", "mexican", "noddles", "pizza", "salad", "sandwiches", "seafood", "soup", "thai", "vegetarian", "all"]
+  
+  //go through the category 
+
+  app.category.map(function(...category){
+    app.iconFiles.map(function(filename) {
+      if (filename === category) {
+        app.finalfileName = filename;
+      } else {
+        app.finalFileName = "all";
+      }
+    });
+
+  })
+
+  console.log(app.finalFileName);
+}
+
+
 //CREATE METHOD TO RENDER DATA FROM API RESULTS TO DOM
 app.renderDOM = function(restaurants) {
   
@@ -127,12 +150,17 @@ app.renderDOM = function(restaurants) {
     const price = restaurant.price;
     const distance = Math.floor(restaurant.distance);
     const location = restaurant.location.address1; 
-  
+    const category = restaurant.categories.map(function (category) {
+        return `${category.alias}`
+      });
 
     $(".results").append(
       `<div class="results__restaurant restaurant">
         <div class="restaurant__image-container">
           <img class="restaurant__image" src="${image}" alt="photo of food from ${name}"/>
+          <div class="icon-container">
+            <img src="assets/categories_icons/${app.finalFileName}.png" class="icon" alt="this restaurant has ${category} food.">
+          </div>
         </div>
         <div class="restaurant__text-container clearfix" id="${
           restaurant.id
@@ -149,7 +177,9 @@ app.renderDOM = function(restaurants) {
             <span class="restaurant__dollar dollar3">$</span>
             <span class="restaurant__dollar dollar4">$</span>
           </p>
-          <p class="restaurant__distance" data-id="${restaurant.id}">&nbsp;</p>
+          <p class="restaurant__distance" data-id="${
+            restaurant.id
+          }">&nbsp;</p>
           <p class="paragraph restaurant__distance-text">
             ${distance} metres
           </p>
@@ -162,7 +192,7 @@ app.renderDOM = function(restaurants) {
 
     app.displayPrice(price, restaurant.id);
     app.displayDistance(distance, restaurant.id);
-  
+    app.displayCategory(restaurant.categories);
   });
 }
 
