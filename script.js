@@ -77,7 +77,7 @@ app.getDataFromApi = (radius, limit, price, sort, category, open) => {
       app.renderDOM(result.businesses);
     })
     .fail(error => { 
-      console.log("Ah oh", error);
+      alert("Sorry, we did not find any restaurants that match your search criteria")
     });
 }
 
